@@ -25,13 +25,13 @@ public class JBehaveTest extends JUnitStory {
     @Override
     public Configuration configuration() {
         Properties viewResources = new Properties();
-        viewResources.put("decorateNonHtml", "false");
+        viewResources.put("decorateNonHtml", "true");
         return new MostUsefulConfiguration()
                 .useStoryLoader(new LoadFromClasspath(this.getClass()))
                 .useStoryPathResolver(new StoryResolver())
                 .useStoryReporterBuilder(new StoryReporterBuilder()
                         .withViewResources(viewResources)
-                        .withRelativeDirectory("../build/reports/jbehave-report")
+                        .withRelativeDirectory("build/reports/jbehave-report")
                         .withFailureTrace(true)
                         .withDefaultFormats()
                         .withFormats(Format.CONSOLE, Format.HTML));
