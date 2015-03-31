@@ -18,4 +18,29 @@ dependencies {
     testCompile 'info.cukes:cucumber-junit:1.2.2'
 
     testCompile 'org.jbehave:jbehave-core:3.9.5'
+    testCompile 'org.jbehave.site:jbehave-site-resources:3.2@zip'
+}
+
+def jarPath(String jarName) {
+    configurations.testCompile.filter{it.name.startsWith(jarName)}.asPath
+}
+
+test {
+    doFirst {
+        copy {
+            from(zipTree(jarPath("jbehave-core"))) {
+                include "style/*"
+            }
+            into("build/reports/jbehave/view")
+
+        }
+        copy {
+            from(zipTree(jarPath("jbehave-site-resources"))) {
+                include "js/**/*"
+                include "style/**/*"
+                include "images/*"
+            }
+            into("build/reports/jbehave/view")
+        }
+    }
 }

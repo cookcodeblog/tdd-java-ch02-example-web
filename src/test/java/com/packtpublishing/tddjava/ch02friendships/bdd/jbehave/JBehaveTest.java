@@ -5,6 +5,7 @@ import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.io.AbstractStoryPathResolver;
+import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.junit.JUnitStory;
 import org.jbehave.core.reporters.Format;
@@ -31,7 +32,8 @@ public class JBehaveTest extends JUnitStory {
                 .useStoryPathResolver(new StoryResolver())
                 .useStoryReporterBuilder(new StoryReporterBuilder()
                         .withViewResources(viewResources)
-                        .withRelativeDirectory("build/reports/jbehave-report")
+                        .withCodeLocation(
+                                CodeLocations.codeLocationFromPath("build/reports/jbehave"))
                         .withFailureTrace(true)
                         .withDefaultFormats()
                         .withFormats(Format.CONSOLE, Format.HTML));
