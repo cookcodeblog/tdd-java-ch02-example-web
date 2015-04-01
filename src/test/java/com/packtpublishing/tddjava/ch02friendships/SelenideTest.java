@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 
 public class SelenideTest {
     @Test
-    public void test() throws InterruptedException {
+    public void wikipediaSearchFeature() throws InterruptedException {
         // Opening Wikipedia page
         open("http://en.wikipedia.org/wiki/Main_Page");
 

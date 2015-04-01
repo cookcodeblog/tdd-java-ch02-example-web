@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 
 public class SeleniumTest {
     @Test
-    public void test() throws InterruptedException {
+    public void wikipediaSearchFeature() throws InterruptedException {
         // Declaring the web driver used for web browsing
         WebDriver driver = new FirefoxDriver();
 
