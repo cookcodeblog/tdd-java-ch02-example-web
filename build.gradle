@@ -25,6 +25,14 @@ def jarPath(String jarName) {
     configurations.testCompile.filter{it.name.startsWith(jarName)}.asPath
 }
 
+task testJBehave(type: Test) {
+    include '**/JBehaveTest*'
+}
+
+task testCucumber(type: Test) {
+    include '**/CucumberTest*'
+}
+
 test {
     doFirst {
         copy {

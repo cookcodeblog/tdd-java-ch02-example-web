@@ -16,19 +16,19 @@ public class WebSteps {
         open("http://en.wikipedia.org/wiki/Main_Page");
     }
 
-    @When("^I enter the value (\\S+[ \\S+]*) on a field named (\\S+)$")
+    @When("^I enter the value (.*) on a field named (.*)$")
     @org.jbehave.core.annotations.When("I enter the value $value on a field named $fieldName")
     public void enterValueOnFieldByName(String value, String fieldName){
         $(By.name(fieldName)).setValue(value);
     }
 
-    @When("^I click the button (\\S+)$")
+    @When("^I click the button (.*)$")
     @org.jbehave.core.annotations.When("I click the button $buttonName")
     public void clickButonByName(String buttonName){
         $(By.name(buttonName)).click();
     }
 
-    @Then("^the page title contains (\\S+[ \\S+]*)$")
+    @Then("^the page title contains (.*)$")
     @org.jbehave.core.annotations.Then("the page title contains $title")
     public void pageTitleIs(String title) {
         assertThat(title(), containsString(title));

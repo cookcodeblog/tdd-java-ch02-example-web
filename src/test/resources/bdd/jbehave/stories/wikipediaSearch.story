@@ -1,4 +1,4 @@
-Scenario:  Wikipedia search
+Scenario:  TDD search on wikipedia
  
 Given I go to Wikipedia homepage
 When I enter the value Test-driven development on a field named search
